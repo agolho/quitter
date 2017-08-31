@@ -1,16 +1,11 @@
 var shitincoming = "",quitDate="";
 var Data = localStorage.getItem("quitter-data");
-console.log(Date());
+
 $( "#picker" ).submit(function( event ) {
-  var quitDate = $( "input:first" ).val();
-  alert(quitDate);
   event.preventDefault();
-  if (Data == null){
-    quitDate=0;
+  var quitDate = $( "input:first" ).val();
+    alert(quitDate);
     localStorage.setItem("quitter-data",quitDate);
-  } else {
-    localStorage.setItem("quitter-data",quitDate);
-  }
 });
 
 if (Data != null) {
@@ -26,7 +21,7 @@ if (Data != null) {
   $("#counter").html( days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ");
 } else{
-  $("#picker-container").html("<form id='picker' class='form-control' action='index.html' method='post'><div class=''><input type='datetime-local' class='form-control'></div><button type='submit' class='btn btn-large btn-primary' name='button'>Done</button></form>");
+ //  $("#picker-container").html("<form id='picker' class='form-control' action='index.html' method='post'><div class=''><input type='datetime-local' class='form-control'></div><button type='submit' class='btn btn-large btn-primary' name='button'>Done</button></form>");
 }
 
 if (hours > 0 || minutes > 20) {
