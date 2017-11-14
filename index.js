@@ -8,9 +8,14 @@ $( "#picker-container" ).submit(function( event ) {
   var quitDate = $( "input:first" ).val();
   //  alert(quitDate);
     localStorage.setItem("quitter-data",quitDate);
+    location.reload();
   startCount();
 });
 
+$( "#relapsebtn" ).click(function() {
+  localStorage.removeItem("quitter-data");
+  location.reload();
+});
 function startCount(){
   if (Data != null) {
     var then = new Date(Data).getTime();
