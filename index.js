@@ -27,8 +27,10 @@ function startCount(){
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+    var notsmoked = Math.floor((days * 20) + (hours * 0.8333333) + (minutes * 0.0138888888888889));
+    console.log(notsmoked);
     $("#counter").html( days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ");
+    + minutes + "m " + seconds + "s <br> You have not smoked: " + notsmoked + " Cigarettes <br> Saved: "+ notsmoked * 0.5 + "TL in the process.");
     whoFacts(days,hours,minutes,seconds);
   } else{
      $("#picker-container").html("<form class='form-control' ><div class=''><input type='datetime-local' class='form-control'></div><button type='submit' class='btn btn-large btn-primary form-control' name='button'>Done</button></form>");
